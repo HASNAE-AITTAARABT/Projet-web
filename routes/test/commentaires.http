@@ -1,0 +1,36 @@
+### Get all commentaires
+GET http://localhost:3000/commentaire
+
+
+### Step over the first 8 commentaires and take 2
+GET http://localhost:3000/commentaires?skip=0&take=2
+
+
+### GET comment by id
+GET http://localhost:3000/commentaire/23
+
+
+
+
+### Delete comment
+DELETE http://localhost:3000/commentaires/7
+
+
+
+### Create new commentaire
+POST http://localhost:3000/commentaires
+content-type: application/json
+
+{
+  "comment":  ,
+   "writtenById": 
+   "postId" :
+}
+###
+PATCH  http://localhost:3000/commentaires
+content-type: application/json
+
+{
+  "id" : 1,
+  "comment": ""
+}
