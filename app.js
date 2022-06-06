@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var articlesRouter = require('./routes/articles');
 var commentairesRouter = require('./routes/commentaires');
-//var categoriesRouter = require('./routes/categories');
+var categoriesRouter = require('./routes/categories');
 var app = express();
 
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/articles', articlesRouter);
-//app.use('/categories', categoriesRouter);
+app.use('/categories', categoriesRouter);
 app.use('/commentaires', commentairesRouter);
 
 // catch 404 and forward to error handler
@@ -43,7 +43,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.send('error');
 });
 
 module.exports = app;
